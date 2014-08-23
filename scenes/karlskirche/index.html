@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>text test</title>
 		<script src="../../phaser.js"></script>
-		<script src="../../modules/TextWriter.js"></script>
+		<script src="../../shared/TextWriter.js"></script>
 		<link rel="stylesheet" href="assets/fonts/emulator/stylesheet.css" type="text/css" charset="utf-8" />
     </head>
     <body>
@@ -13,7 +13,7 @@
 
     window.onload = function() {
 
-		var game = new Phaser.Game(480, 320, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+		var game = new Phaser.Game(240, 160, Phaser.AUTO, '', { preload: preload, create: create, update: update });
 
 		var text_writer;
 		var camera_panning = true;
@@ -33,7 +33,7 @@
 			game.add.sprite(0,0,'karlskirche');
 	
 			// camera pan
-			camera_target_x = background_image.width*0.5;
+			camera_target_x = Math.round(background_image.width*0.5);
 			console.log('got camera target x '+camera_target_x+' from width '+background_image.width);
 
 			// delay before showing text
@@ -44,7 +44,7 @@
 		function startText() {
 
 			// text
-			text_writer = TextWriter( game, "Ihr seid vor der Karlskirche gesessen, und als es dunkel wurde, spiegelte sich die Kirche im schwarzen Teich.", 10, game.height-57, "14px" );
+			text_writer = TextWriter( game, "Ihr seid vor der Karlskirche gesessen, und als es dunkel wurde, spiegelte sich die Kirche im schwarzen Teich.", 4, game.height-32, "8px" );
         }
 
 		function update() {
@@ -57,12 +57,6 @@
 				}
 			}
 
-
-		}
-
-		function render() {
-
-			    game.debug.cameraInfo(game.camera, 32, 32);
 
 		}
 
