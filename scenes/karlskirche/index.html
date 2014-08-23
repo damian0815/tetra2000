@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>text test</title>
+		<script src="../../phaser.js"></script>
+		<script src="../../modules/TextWriter.js"></script>
+		<link rel="stylesheet" href="assets/fonts/emulator/stylesheet.css" type="text/css" charset="utf-8" />
+    </head>
+    <body>
+
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+		var game = new Phaser.Game(480, 320, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+
+		var text_writer;
+		var camera_panning = true;
+		var camera_target_x;
+
+		function preload() {
+			game.load.image('karlskirche', 'assets/karlskirche.png');
+		}
+
+        function create () {
+
+			// set world size
+			var background_image = game.cache.getImage('karlskirche');
+			game.world.setBounds( 0, 0, background_image.width, background_image.height );
+
+			// background
+			game.add.sprite(0,0,'karlskirche');
+	
+			// camera pan
+			camera_target_x = background_image.width*0.5;
+			console.log('got camera target x '+camera_target_x+' from width '+background_image.width);
+
+			// delay before showing text
+			var textDelay = Phaser.Timer.SECOND*5;
+			game.time.events.add(textDelay, startText, this);
+		} 
+
+		function startText() {
+
+			// text
+			text_writer = TextWriter( game, "Ihr seid vor der Karlskirche gesessen, und als es dunkel wurde, spiegelte sich die Kirche im schwarzen Teich.", 10, game.height-57, "14px" );
+        }
+
+		function update() {
+
+			if ( camera_panning ) {
+				game.camera.x = game.camera.x+1;
+				if ( game.camera.x > camera_target_x ) {
+					game.camera.x = camera_target_x;
+					camera_panning = false;
+				}
+			}
+
+
+		}
+
+		function render() {
+
+			    game.debug.cameraInfo(game.camera, 32, 32);
+
+		}
+
+
+    };
+
+    </script>
+
+	<!--<p font='emulatorregular'>hello</p>-->
+
+    </body>
+
+</html>
+
+
