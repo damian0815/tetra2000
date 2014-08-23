@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>tree test</title>
 		<script src="../phaser.js"></script>
+		<script src="TextWriter.js"></script>
 		<link rel="stylesheet" href="assets/fonts/emulator/stylesheet.css" type="text/css" charset="utf-8" />
     </head>
     <body>
@@ -12,16 +13,15 @@
 
     window.onload = function() {
 
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { create: create });
+		var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { create: create });
+
+		var text_writer;
 
         function create () {
-			
 			// text
-			var style = { font: "64px emulatorregular", fill: "#ffffff" };
-			var text = game.add.text( game.world.centerX, game.world.centerY, "test", style );
-			text.anchor.set(0.5);
-
+			text_writer = TextWriter( game, "Ihr seid vor der Karlskirche gesessen, und als es dunkel wurde, spiegelte sich die Kirche im schwarzen Teich.", 20, 20 );
         }
+
 
 
     };
