@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>tree test</title>
+		<script src="../phaser.js"></script>
+		<script src="TextWriter.js"></script>
+		<link rel="stylesheet" href="assets/fonts/emulator/stylesheet.css" type="text/css" charset="utf-8" />
+    </head>
+    <body>
+
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+		var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { create: create });
+
+		var text_writer;
+
+        function create () {
+			// text
+			text_writer = TextWriter( game, "Ihr seid vor der Karlskirche gesessen, und als es dunkel wurde, spiegelte sich die Kirche im schwarzen Teich.", 20, 20 );
+        }
+
+
+
+    };
+
+    </script>
+
+	<!--<p font='emulatorregular'>hello</p>-->
+
+    </body>
+
+</html>
