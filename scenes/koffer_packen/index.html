@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>text test</title>
+		<script src="../../phaser.js"></script>
+		<script src="koffer_packen.js"></script>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+		var game = new Phaser.Game(240, 160, Phaser.AUTO, '' );
+		var koffer_packen = KofferPacken(game);
+		game.state.add( 'koffer_packen', koffer_packen );
+		game.state.start( 'koffer_packen' );
+
+    };
+
+    </script>
+
+
+    </body>
+
+</html>
+
+
