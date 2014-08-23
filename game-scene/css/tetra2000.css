@@ -1,0 +1,17 @@
+body {
+
+    background: #333;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+#gameContainer {
+
+    margin: 50px auto;
+
+    max-width: 240px;
+
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="24" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32">
+  <image source="../images/tiles.png" width="512" height="64"/>
+ </tileset>
+ <layer name="Background" width="30" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztwYEAAAAAw6D5U1/hAFUBAACvAQtAAAE=
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="30" height="24">
+  <data encoding="base64" compression="zlib">
+   eJzllUsOgCAMRJt4A00UP+D9byldTIKmEkCKC5rMithH67QsRHQ2lvUyXsOLDgVxXhfhbqQTJsLVYsa4msw3rjZT4moxF7p7OfRVKhM5rHA2ee2CJE8zd864O3rjMr6RYk7kok74QJMb9u3Zp69eSK23djCT/1nog7UR9696e+HybOTOb43AnuyNO37IEe6W1PkDt2Wwp0r2LOor2S1g1tjvJUxwpTeztqR35QKBIxOR
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="30" height="24">
+  <object gid="1" x="64" y="736">
+   <properties>
+    <property name="name" value="Level 2"/>
+    <property name="source" value="1"/>
+   </properties>
+  </object>
+  <object gid="2" x="0" y="736">
+   <properties>
+    <property name="next" value="1"/>
+    <property name="source" value="2"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="480" y="608">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="512" y="608">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="576" y="608">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="800" y="704">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="800" y="160">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="800" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="832" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="coin" gid="5" x="832" y="160">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="7" x="0" y="32">
+   <properties>
+    <property name="env" value="indoor1"/>
+   </properties>
+  </object>
+  <object gid="8" x="544" y="288"/>
+  <object gid="8" x="544" y="320"/>
+  <object gid="8" x="544" y="352"/>
+  <object gid="8" x="544" y="384"/>
+  <object gid="8" x="544" y="416"/>
+  <object gid="8" x="544" y="448"/>
+  <object gid="8" x="544" y="480"/>
+  <object gid="8" x="544" y="512"/>
+  <object gid="8" x="544" y="544"/>
+  <object gid="8" x="544" y="576"/>
+  <object gid="8" x="544" y="608"/>
+  <object gid="8" x="544" y="256"/>
+ </objectgroup>
+</map>

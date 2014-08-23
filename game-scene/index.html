@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>tree test</title>
+
+        <script src="js/phaser-dev.js"></script>
+
+
+        <script src="js/Boot.js"></script>
+        <script src="js/Preloader.js"></script>
+        <script src="js/MainMenu.js"></script>
+        <script src="js/Game.js"></script>
+
+        <script src="js/classes/Player.js"></script>
+        <script src="js/classes/Dialog.js"></script>
+
+        <link rel="stylesheet" href="css/tetra2000.css">
+</head>
+<body>
+    <div id="gameContainer"></div>
+<script type="text/javascript" charset="utf-8">
+
+window.onload = function() {
+
+        var game = new Phaser.Game(240, 160, Phaser.AUTO, 'gameContainer');
+
+
+        game.state.add('Boot', Tetra2000.Boot);
+        game.state.add('Preloader', Tetra2000.Preloader);
+        game.state.add('MainMenu', Tetra2000.MainMenu);
+        game.state.add('Game', Tetra2000.Game);
+
+        game.state.start('Boot');
+
+};
+</script>
+</body>
+</html>
+

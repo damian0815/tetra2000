@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="12" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32">
+  <image source="../images/tiles.png" width="512" height="64"/>
+ </tileset>
+ <layer name="Background" width="30" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBg4oEBnPGrv0LBXBorpaa8ckn4JMu0eSvaCsDwUk6OXEnuxYWYoppW9+AAzA2H7BwoAACanIZI=
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="30" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxTYGBgkKEzVgBiOQb6A4lRe0ftpQEQGSB7GYaJveJALEtDe0Hmy2PBClBMjN0KOMzAhxWIwITMAABAewn4
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="30" height="12">
+  <object gid="1" x="64" y="352">
+   <properties>
+    <property name="name" value="Level 0"/>
+    <property name="source" value="0"/>
+   </properties>
+  </object>
+  <object gid="2" x="928" y="352">
+   <properties>
+    <property name="next" value="1"/>
+    <property name="source" value="0"/>
+   </properties>
+  </object>
+  <object gid="1" x="864" y="352">
+   <properties>
+    <property name="name" value="Level 0"/>
+    <property name="source" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="640" y="288">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="Test NPC" gid="6" x="416" y="320">
+   <properties>
+    <property name="id" value="0"/>
+    <property name="name" value="Test NPC"/>
+    <property name="questAccept" value="Welcome to Reminiscence. This is a test map with a single test quest. Bring me $10."/>
+    <property name="questAmount" value="10"/>
+    <property name="questComplete" value="Thanks!"/>
+    <property name="questItem" value="money"/>
+    <property name="questName" value="Gimme!"/>
+    <property name="questProgress" value="Where's my money?!"/>
+    <property name="questType" value="collect"/>
+   </properties>
+  </object>
+  <object name="MapProps" gid="7" x="0" y="32">
+   <properties>
+    <property name="env" value="indoor1"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

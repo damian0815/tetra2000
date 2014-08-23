@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="12" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tiles" tilewidth="32" tileheight="32">
+  <image source="../images/tiles.png" width="512" height="64"/>
+ </tileset>
+ <layer name="Background" width="30" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBgBAAWgAAE=
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="30" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgYIDtA9sqN2jus7ZWio13iQCwPxfS0UwaKFWhojzAQSyNh5HCVoKG9+AA59iLHETomtgySwGMGLqxAABNrBgDqYgbT
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="30" height="12">
+  <object gid="1" x="32" y="352">
+   <properties>
+    <property name="name" value="Level 1"/>
+    <property name="source" value="0"/>
+   </properties>
+  </object>
+  <object gid="2" x="0" y="352">
+   <properties>
+    <property name="next" value="0"/>
+    <property name="source" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="832" y="320">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="800" y="320">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="768" y="352">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="736" y="352">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="704" y="352">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="672" y="352">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="640" y="352">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object name="MapProps" gid="7" x="0" y="32">
+   <properties>
+    <property name="env" value="indoor1"/>
+   </properties>
+  </object>
+  <object name="Kid" gid="6" x="864" y="352">
+   <properties>
+    <property name="id" value="1"/>
+    <property name="message" value="This is a test message for a non-quest giving NPC. Dude!"/>
+    <property name="name" value="Kid"/>
+    <property name="questType" value="none"/>
+   </properties>
+  </object>
+  <object gid="2" x="928" y="192">
+   <properties>
+    <property name="next" value="2"/>
+    <property name="source" value="1"/>
+   </properties>
+  </object>
+  <object gid="1" x="864" y="192">
+   <properties>
+    <property name="name" value="Level 1"/>
+    <property name="source" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
