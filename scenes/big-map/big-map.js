@@ -9,7 +9,7 @@ var BigMap = function(game) {
 
 BigMap.prototype.preload = function() {
 
-	this.game.load.tilemap('big-map', 'assets/big_map_vs2.json', null, Phaser.Tilemap.TILED_JSON);
+	this.game.load.tilemap('big-map', 'assets/big_map_vs3.json', null, Phaser.Tilemap.TILED_JSON);
 	this.game.load.image('big-map-sidewalk', 'assets/sidewalk.png');
 	this.game.load.image('big-map-grass', 'assets/grass.png');
 	this.game.load.image('big-map-bus_station', 'assets/bus_station.png');
