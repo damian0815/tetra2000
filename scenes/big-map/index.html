@@ -12,7 +12,7 @@
 	<script>
 		window.onload = function() {
 			var game = new Phaser.Game(240, 160, Phaser.AUTO, '' );
-			var big_map = BigMap(game);
+			var big_map = new BigMap(game);
 			game.state.add( 'big_map', big_map );
 			game.state.start( 'big_map' );
 		};

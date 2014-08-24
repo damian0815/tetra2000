@@ -95,6 +95,7 @@ function KofferPacken(game) {
 	}
 
 	this.create = function() {
+
 		this.map = game.add.tilemap('map');
 		// attach the tiles image to the map
 		this.map.addTilesetImage('koffer_packen', 'koffer_packen');
