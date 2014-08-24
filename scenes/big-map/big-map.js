@@ -53,13 +53,16 @@ BigMap.prototype.create = function() {
 	sprite = this.buildingGroup.create(2*16, 1*16, 'big-map-magistrat');
 	sprite.body.moves = false;
 
+    // riesenrad is special
+	this.riesenrad = this.game.add.sprite(43*16, 5*16, 'big-map-riesenrad');
+	
+	
 	// load player sprite
 	this.player = this.game.add.sprite(32, this.game.world.height-16, 'tetra');
 	// 'buildings' map layer is just the bus haltestelle- in front
 	this.map.createLayer('buildings');
 
-	// riesenrad is special
-	this.riesenrad = this.game.add.sprite(43*16, 5*16, 'big-map-riesenrad');
+	
 
 	// camera follow
 	this.game.camera.follow(this.player);
@@ -74,55 +77,109 @@ BigMap.prototype.create = function() {
 	this.player.body.collideWorldBounds = true;
 
 	// riesenrad
+	this.playerIsAllowedOnRiesenrad = true;
 	this.playerOnRiesenrad = false;
 	this.game.physics.enable(this.riesenrad, Phaser.Physics.ARCADE);
+	this.riesenrad.body.moves = false;
 
+// place tetra next to the riesenrad for testing
+  /*
+   this.player.x = 46 * 16;
+   this.player.y = 14 * 16;
+  */
+   
+   
+    
 
 
 }
 
 BigMap.prototype.startRiesenrad = function( player, riesenrad ) {
 
-	if ( !this.playerOnRiesenrad ) {
-		this.riesenradAngle = 0;
-		this.playerOnRiesenrad = true;
-		console.log('on riesenrad');
+	if ( !this.playerOnRiesenrad && this.playerIsAllowedOnRiesenrad) {
+	
+	    var riesenRadBase = this.riesenrad.y + this.riesenrad.height;
+	    var riesenRadCenterX = this.riesenrad.x + this.riesenrad.width/2.;
+	
+	    var dx = this.player.x - riesenRadCenterX;
+	    var dy = this.player.y - riesenRadBase;
+	    var tetraDistFromRiesenrad = Math.sqrt(dx*dx + dy*dy);
+	    
+	    if(tetraDistFromRiesenrad < 70){
+			console.log("riesenrad started");
+	    	this.riesenradAngle = 0;
+			this.playerOnRiesenrad = true;
+		}
+		
 	}
 
 }
 
 BigMap.prototype.updateRiesenrad = function() {
 
+	/*
+	if(!this.playerOnRiesenrad){
+		 return;
+	}
+	*/
+
+	var cx = this.riesenrad.x + this.riesenrad.width/2.;
+	var cy = this.riesenrad.y + this.riesenrad.height/2.;
+	// console.log('cx: ' + cx + ' cy: ' + cy);
+
+	var x = cx + this.riesenrad.width/2. * Math.sin( this.riesenradAngle * Math.PI/180);
+	var y = cy + this.riesenrad.height/2. * Math.cos( this.riesenradAngle * Math.PI/180);
+
+	if(this.riesenradAngle < 359){
+	   this.riesenradAngle += 0.5;
+	  //  console.log("this.riesenradAngle: " + this.riesenradAngle);
+	   this.player.x = x-8;
+	  this.player.y = y-8;
+  
+	}else{
+	   this.playerOnRiesenrad = false;
+	   this.playerIsAllowedOnRiesenrad = false;
+	   this.player.x = x-8;
+	   this.player.y = y;
+	   this.game.time.events.add(Phaser.Timer.SECOND, function(){ this.playerIsAllowedOnRiesenrad = true;} , this);
+	}
+
+ 
 
 }
 
 BigMap.prototype.update = function() {
-
+ 
+   
+    
 	// when touching the riesenrad, go on a spin
 	this.physics.arcade.overlap(this.player, this.riesenrad, BigMap.prototype.startRiesenrad, null, this);
 	if ( this.playerOnRiesenrad ) {
 		this.updateRiesenrad();
+	} else {
+		this.physics.arcade.collide(this.player, this.riesenrad);
 	}
 
 	// don't walk through buildings
 	this.physics.arcade.collide(this.player, this.buildingGroup);
 
 	// update movement
-	this.player.body.velocity.x = 0;
-	this.player.body.velocity.y = 0;
-	if ( this.cursors.left.isDown ) {
-		this.player.body.velocity.x = -150;
+	if(! this.playerOnRiesenrad){
+		this.player.body.velocity.x = 0;
+		this.player.body.velocity.y = 0;
+		if ( this.cursors.left.isDown ) {
+			this.player.body.velocity.x = -150;
+		}
+		else if ( this.cursors.right.isDown ) {
+			this.player.body.velocity.x = 150;
+		}
+		else if ( this.cursors.up.isDown ) {
+			this.player.body.velocity.y = -150;
+		}
+		else if ( this.cursors.down.isDown ) {
+			this.player.body.velocity.y = 150;
+		}
 	}
-	else if ( this.cursors.right.isDown ) {
-		this.player.body.velocity.x = 150;
-	}
-	else if ( this.cursors.up.isDown ) {
-		this.player.body.velocity.y = -150;
-	}
-	else if ( this.cursors.down.isDown ) {
-		this.player.body.velocity.y = 150;
-	}
-
 
 
 }
