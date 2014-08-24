@@ -10,11 +10,11 @@ var Dialog = function (game, npc) {
     "use strict";
     this.game = game;
 
-    var message = '', font = {fill: 'white', font: '9px Montserrat', align: 'left', wordWrap: true, wordWrapWidth: 160}, createTween;
+    var message = '', font = {fill: 'white', font: '9px Montserrat', align: 'left', wordWrap: true, wordWrapWidth: 78}, createTween;
     this.text = null;
 
     this.dialogBackground = game.add.sprite(10, 30, 'dialogBackground');
-    this.dialogBackground.width = 160;
+    this.dialogBackground.width = 600;
     this.dialogBackground.height = 0;
     this.dialogBackground.fixedToCamera = true;
 

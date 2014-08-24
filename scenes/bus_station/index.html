@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+		<script src="../../phaser.js"></script>
+		<script src="bus_station.js"></script>
+    </head>
+    <body>
+        <script type="text/javascript">
+        window.onload = function() {
+
+    		var game = new Phaser.Game(240, 160, Phaser.AUTO, '' );
+    		var bus_station = BusStation(game);
+    		game.state.add( 'bus_station', bus_station );
+    		game.state.start( 'bus_station' );
+
+        };
+        </script>
+    </body>
+</html>
+
+

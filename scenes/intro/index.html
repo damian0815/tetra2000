@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>text test</title>
+		<script src="../../phaser.js"></script>
+		<script src="intro.js"></script>
+    </head>
+    <body>
+
+    <script type="text/javascript">
+
+    window.onload = function() {
+
+		var game = new Phaser.Game(240, 160, Phaser.AUTO, '' );
+		var intro = KofferPacken(game);
+		game.state.add( 'intro', intro );
+		game.state.start( 'intro' );
+
+    };
+    </script>
+    </body>
+</html>
+

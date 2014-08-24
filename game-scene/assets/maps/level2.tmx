@@ -10,7 +10,7 @@
  </layer>
  <layer name="Tile Layer 1" width="30" height="24">
   <data encoding="base64" compression="zlib">
-   eJzllUsOgCAMRJt4A00UP+D9byldTIKmEkCKC5rMithH67QsRHQ2lvUyXsOLDgVxXhfhbqQTJsLVYsa4msw3rjZT4moxF7p7OfRVKhM5rHA2ee2CJE8zd864O3rjMr6RYk7kok74QJMb9u3Zp69eSK23djCT/1nog7UR9696e+HybOTOb43AnuyNO37IEe6W1PkDt2Wwp0r2LOor2S1g1tjvJUxwpTeztqR35QKBIxOR
+   eJzllcsOQEAMRYuVLeI9/P9fmiaalNRkXmXhJnclerTudAYA2F+2sR6tqwevCsa6m4M7g45GB1eL6eJqMp+42kyJq8Uc4JplnitfJtUwwrPWehEsZRq5fcC302y2gHck9Z5c6pNyoMnlc7vPKTULvv3mFjLxn/EcTC9xv+r3L1w8G6HnN4doT/6F253cJqEG3y2+569JZMaoZg4R9RezW2qI58YKOQVjliDfmbkt3SsHBXMTJw==
   </data>
  </layer>
  <objectgroup name="Object Layer 1" width="30" height="24">
@@ -83,5 +83,17 @@
   <object gid="8" x="544" y="576"/>
   <object gid="8" x="544" y="608"/>
   <object gid="8" x="544" y="256"/>
+  <object x="832" y="704" width="32" height="32">
+   <properties>
+    <property name="name" value="Level 2"/>
+    <property name="source" value="3"/>
+   </properties>
+  </object>
+  <object x="928" y="704" width="32" height="32">
+   <properties>
+    <property name="next" value="3"/>
+    <property name="source" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

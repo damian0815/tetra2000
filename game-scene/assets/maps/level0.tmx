@@ -5,16 +5,16 @@
  </tileset>
  <layer name="Background" width="30" height="12">
   <data encoding="base64" compression="zlib">
-   eJxjYBg4oEBnPGrv0LBXBorpaa8ckn4JMu0eSvaCsDwUk6OXEnuxYWYoppW9+AAzA2H7BwoAACanIZI=
+   eJzjZGBg4CQDUwrIsZNSPGrvqL2jeGRiXIAS8wiZTaqd2AAAzi0LFA==
   </data>
  </layer>
  <layer name="Tile Layer 1" width="30" height="12">
   <data encoding="base64" compression="zlib">
-   eJxTYGBgkKEzVgBiOQb6A4lRe0ftpQEQGSB7GYaJveJALEtDe0Hmy2PBClBMjN0KOMzAhxWIwITMAABAewn4
+   eJxjZmBgYB4ALDcAdkqM2jtqLw2wyADZyzxM7BUHYlka2AsDIPPlsWAFKCbGbgUkfcw4zMNlPj5MyAwAakIKEw==
   </data>
  </layer>
  <objectgroup name="Object Layer 1" width="30" height="12">
-  <object gid="1" x="64" y="352">
+  <object gid="1" x="96" y="96">
    <properties>
     <property name="name" value="Level 0"/>
     <property name="source" value="0"/>
@@ -32,7 +32,7 @@
     <property name="source" value="1"/>
    </properties>
   </object>
-  <object gid="5" x="640" y="288">
+  <object gid="5" x="224" y="352">
    <properties>
     <property name="amount" value="1"/>
    </properties>
@@ -53,6 +53,237 @@
   <object name="MapProps" gid="7" x="0" y="32">
    <properties>
     <property name="env" value="indoor1"/>
+   </properties>
+  </object>
+  <object x="672" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+   <polyline points="0,0 -32,32 -32,96 0,96 0,0"/>
+  </object>
+  <object gid="5" x="256" y="352">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="320">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="320">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="64" y="160">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="288">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="320" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="320" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="320" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="320" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="320" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="320" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="320" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="352" y="256">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="192" y="160">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="160">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="224">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="224">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="224">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="288">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="288">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="64" y="160">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="352" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="96">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="352" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="224">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="448" y="224">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="256" y="160">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="224" y="128">
+   <properties>
+    <property name="amount" value="1"/>
+   </properties>
+  </object>
+  <object gid="5" x="288" y="128">
+   <properties>
+    <property name="amount" value="1"/>
    </properties>
   </object>
  </objectgroup>

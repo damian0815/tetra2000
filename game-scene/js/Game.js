@@ -1,5 +1,5 @@
 /*global Phaser:true, Tetra2000:true, Player:true, Dialog:true*/
-Tetra2000.Game = function (game) {
+Tetra2000.Game = function(game) {
     "use strict";
 
     this.game = game;
@@ -9,11 +9,19 @@ var player, map, mapName, mapNameContainer, spawns, exits, backgroundObjects, ba
 
 Tetra2000.Game.prototype = {
 
-    create: function () {
+    create: function() {
         "use strict";
 
-        this.fontSmall = {font: '16px Montserrat', align: 'left', fill: 'white'};
-        this.font = {font: '24px Montserrat', align: 'left', fill: 'white'};
+        this.fontSmall = {
+            font: 'px Montserrat',
+            align: 'left',
+            fill: 'white'
+        };
+        this.font = {
+            font: '24px Montserrat',
+            align: 'left',
+            fill: 'white'
+        };
         spawns = this.game.add.group();
         exits = this.game.add.group();
         backgroundObjects = this.game.add.group();
@@ -36,20 +44,28 @@ Tetra2000.Game.prototype = {
         fpsContainer.fixedToCamera = true;
         fpsContainer.addChild(fpsText);
 
-        if (this.debug) { fpsContainer.alpha = 1; } else { fpsContainer.alpha = 0; }
+        if (this.debug) {
+            fpsContainer.alpha = 1;
+        } else {
+            fpsContainer.alpha = 0;
+        }
 
         fadeIn = this.game.add.sprite(this.game.camera.x, this.game.camera.y, 'fade');
         fadeIn.fixedToCamera = true;
 
-        fadeTween = this.game.add.tween(fadeIn).to({alpha: 0}, 250, Phaser.Easing.Linear.None, true, 0, 0, false);
+        fadeTween = this.game.add.tween(fadeIn).to({
+            alpha: 0
+        }, 250, Phaser.Easing.Linear.None, true, 0, 0, false);
 
-        this.loadLevel(player, {next: 0});
+        this.loadLevel(player, {
+            next: 0
+        });
 
         var playerStart = spawns.getFirstAlive();
         player = new Player(this.game, playerStart, this.debug);
     },
 
-    update: function () {
+    update: function() {
         "use strict";
 
         if (player) {
@@ -76,7 +92,7 @@ Tetra2000.Game.prototype = {
             player.climbEnabled = false;
         }
 
-        npcs.forEach(function (i) {
+        npcs.forEach(function(i) {
             if (this.game.physics.distanceBetween(player, i) < 150) {
                 if (this.dialogCount === 0) {
                     this.dialog = null;
@@ -91,25 +107,53 @@ Tetra2000.Game.prototype = {
 
     },
 
-    loadLevel: function (p, i) {
+    loadLevel: function(p, i) {
         "use strict";
 
-        if (layerSeparator) { layerSeparator.destroy(); }
-        if (backgroundImage) { backgroundImage.destroy(); }
-        if (foregroundLayer) { foregroundLayer.destroy(); }
-        if (backgroundLayer) { backgroundLayer.destroy(); }
-        if (backgroundObjects) { backgroundObjects.removeAll(); }
+        if (layerSeparator) {
+            layerSeparator.destroy();
+        }
+        if (backgroundImage) {
+            backgroundImage.destroy();
+        }
+        if (foregroundLayer) {
+            foregroundLayer.destroy();
+        }
+        if (backgroundLayer) {
+            backgroundLayer.destroy();
+        }
+        if (backgroundObjects) {
+            backgroundObjects.removeAll();
+        }
 
-        if (mapNameContainer) { mapNameContainer.destroy(); }
-        if (mapName) { mapName.destroy(); }
+        if (mapNameContainer) {
+            mapNameContainer.destroy();
+        }
+        if (mapName) {
+            mapName.destroy();
+        }
 
-        if (spawns) { spawns.removeAll(); }
-        if (exits) { exits.removeAll(); }
-        if (coins) { coins.destroy(true); }
-        if (ladders) { ladders.destroy(true); }
-        if (npcs) { npcs.destroy(true); }
-        if (backgroundObjects) { backgroundObjects.removeAll(); }
-        if (map) { map.destroy(); }
+        if (spawns) {
+            spawns.removeAll();
+        }
+        if (exits) {
+            exits.removeAll();
+        }
+        if (coins) {
+            coins.destroy(true);
+        }
+        if (ladders) {
+            ladders.destroy(true);
+        }
+        if (npcs) {
+            npcs.destroy(true);
+        }
+        if (backgroundObjects) {
+            backgroundObjects.removeAll();
+        }
+        if (map) {
+            map.destroy();
+        }
 
         map = this.game.add.tilemap('level' + i.next);
         map.addTilesetImage('tiles', 'tiles');
@@ -117,9 +161,10 @@ Tetra2000.Game.prototype = {
         map.setCollisionBetween(17, 32, 'Tile Layer 1');
         map.createFromObjects('Object Layer 1', 7, null, 0, true, true, backgroundObjects);
         switch (backgroundObjects.getFirstAlive().env) {
-        case 'indoor1':
-            backgroundImage = this.game.add.sprite(0, -50, 'indoorBackground');
-            break;
+            case 'indoor1':
+                backgroundImage = this.game.add.sprite(0, -50,
+                                                       'indoorBackground');
+                break;
         }
 
         backgroundLayer = map.createLayer('Background');
@@ -138,7 +183,7 @@ Tetra2000.Game.prototype = {
         mapNameContainer.addChild(mapName);
 
         map.createFromObjects('Object Layer 1', 2, 'player', 0, true, true, exits);
-        exits.forEach(function (j) {
+        exits.forEach(function(j) {
             j.alpha = 0;
         });
 
@@ -148,11 +193,11 @@ Tetra2000.Game.prototype = {
         coins = this.game.add.group();
         map.createFromObjects('Object Layer 1', 5, 'coin', 0, true, true, coins);
 
-        coins.forEach(function (i) {
+        coins.forEach(function(i) {
             i.animations.add('spin');
             i.animations.play('spin',
-                              12,
-                              true);
+                12,
+                true);
         });
 
         npcs = this.game.add.group();
@@ -162,7 +207,7 @@ Tetra2000.Game.prototype = {
             foregroundLayer.debug = true;
         }
 
-        spawns.forEach(function (j) {
+        spawns.forEach(function(j) {
             j.alpha = 0;
             if (i.source === j.source) {
                 player.x = j.x + 17;
@@ -172,7 +217,9 @@ Tetra2000.Game.prototype = {
 
         foregroundLayer.resizeWorld();
 
-        if (player) { player.bringToTop(); }
+        if (player) {
+            player.bringToTop();
+        }
         mapNameContainer.bringToTop();
         fadeIn.bringToTop();
         moneyContainer.bringToTop();
@@ -182,23 +229,23 @@ Tetra2000.Game.prototype = {
         fadeTween.start();
     },
 
-    render: function () {
+    render: function() {
         "use strict";
 
-        //this.game.debug.renderSpriteBody(player);
+        this.game.debug.renderSpriteBody(player);
     },
 
-    addMoney: function (p, i) {
+    addMoney: function(p, i) {
         "use strict";
         p.money += Number(i.amount);
         i.destroy();
     },
 
-    setClimbable: function (p, i) {
+    setClimbable: function(p, i) {
         player.setClimbEnabled('true');
     },
 
-    quitGame: function (pointer) {
+    quitGame: function(pointer) {
         "use strict";
 
         this.game.state.start('MainMenu');

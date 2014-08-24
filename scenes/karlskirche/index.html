@@ -31,7 +31,7 @@
 
 			// background
 			game.add.sprite(0,0,'karlskirche');
-	
+
 			// camera pan
 			camera_target_x = Math.round(background_image.width*0.5);
 			console.log('got camera target x '+camera_target_x+' from width '+background_image.width);
@@ -39,7 +39,7 @@
 			// delay before showing text
 			var textDelay = Phaser.Timer.SECOND*5;
 			game.time.events.add(textDelay, startText, this);
-		} 
+		}
 
 		function startText() {
 

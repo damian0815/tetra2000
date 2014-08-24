@@ -17,8 +17,8 @@ Tetra2000.Preloader.prototype = {
         /*this.background = this.add.sprite(0,
                                           0,
                                           'preloaderBackground');*/
-        this.preloadBar = this.add.sprite(300,
-                                          400,
+        this.preloadBar = this.add.sprite(800,
+                                          352,
                                           'preloaderBar');
         this.load.setPreloadSprite(this.preloadBar);
 
