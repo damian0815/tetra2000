@@ -50,8 +50,6 @@ BigMap.prototype.create = function() {
 	sprite.body.moves = false;
 	sprite = this.buildingGroup.create(31*16, 16*16, 'big-map-stephansdom');
 	sprite.body.moves = false;
-	sprite = this.buildingGroup.create(43*16, 5*16, 'big-map-riesenrad');
-	sprite.body.moves = false;
 	sprite = this.buildingGroup.create(2*16, 1*16, 'big-map-magistrat');
 	sprite.body.moves = false;
 
@@ -60,6 +58,8 @@ BigMap.prototype.create = function() {
 	// 'buildings' map layer is just the bus haltestelle- in front
 	this.map.createLayer('buildings');
 
+	// riesenrad is special
+	this.riesenrad = this.game.add.sprite(43*16, 5*16, 'big-map-riesenrad');
 
 	// camera follow
 	this.game.camera.follow(this.player);
@@ -73,13 +73,36 @@ BigMap.prototype.create = function() {
 	this.player.body.setSize(16,16,0,4);
 	this.player.body.collideWorldBounds = true;
 
+	// riesenrad
+	this.playerOnRiesenrad = false;
+	this.game.physics.enable(this.riesenrad, Phaser.Physics.ARCADE);
+
 
 
 }
 
+BigMap.prototype.startRiesenrad = function( player, riesenrad ) {
+
+	if ( !this.playerOnRiesenrad ) {
+		this.riesenradAngle = 0;
+		this.playerOnRiesenrad = true;
+		console.log('on riesenrad');
+	}
+
+}
+
+BigMap.prototype.updateRiesenrad = function() {
+
+
+}
 
 BigMap.prototype.update = function() {
 
+	// when touching the riesenrad, go on a spin
+	this.physics.arcade.overlap(this.player, this.riesenrad, BigMap.prototype.startRiesenrad, null, this);
+	if ( this.playerOnRiesenrad ) {
+		this.updateRiesenrad();
+	}
 
 	// don't walk through buildings
 	this.physics.arcade.collide(this.player, this.buildingGroup);
